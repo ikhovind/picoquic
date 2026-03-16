@@ -1398,7 +1398,7 @@ int picoquic_socket_error_implies_unreachable(int sock_err)
         WSAENETUNREACH, WSAESHUTDOWN, -1 };
 #else
     static int unreachable_errors[] = {
-        EAFNOSUPPORT, ECONNRESET, EHOSTUNREACH, ENETDOWN, ENETUNREACH, -1 };
+        EPERM, EAFNOSUPPORT, ECONNRESET, EHOSTUNREACH, ENETDOWN, ENETUNREACH, -1 };
 #endif
     size_t nb_errors = sizeof(unreachable_errors) / sizeof(int);
     int ret = 0;
